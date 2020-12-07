@@ -12,6 +12,8 @@
     <!-- Bootstrap core CSS -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Custom styles for this template -->
     <link href="static/css/style.css" rel="stylesheet">
   </head>
@@ -26,13 +28,13 @@
 
       <div class="collapse navbar-collapse" id="navbarDFSPractico1">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="horarios.html">Horarios</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="Contacto.html">Contacto</a>
           </li>
           <li class="nav-item">
@@ -49,40 +51,64 @@
     </nav>
     <main role="main" class="container">
       <div class="texto-principal">
-        <h1>Practico 1 - <small>Bootstrap</h1>
-        <h2 class="text-black">Desarrollador Full Stack 2020</h2>
-        <p class="lead">
-                    Incorporá nuevas habilidades para digitalizar tu perfil profesional que te permitirán interactuar con las interfaces de usuario (Front-End), así como en la lógica que opera detrás (Back-End).
-                </p>
-              </div>
-              <div class="texto-principal">
-                    <h1 class="text-blue">Tecnologias Hoy</h1>
-                  <p class="lead">
-                    Las aplicaciones web cambiaron para siempre nuestra realidad. Hoy, la tecnología atraviesa todos los trabajos y, saber programar, se convirtió en una habilidad clave. La carrera ofrece formación y acompañamiento para dar
-                    los primeros pasos en el que, hoy, es el rol más demandado por la industria a nivel mundial. Aprenderás desde los fundamentos de la programación, hasta el lanzamiento de aplicaciones web completas; a resolver problemas
-                    aplicando las mejores prácticas de la industria.
-                  </p>
-             </div>
-        <aside>
-          <div class="texto-principal">
-            <figure>
-                <!--     Estilo InLine -->
-                <img src="static/img/ISPC_logo_blanco_transparente-1-768x576.png" alt="ISPC" width="#" height="#" style="width: 150px; display: block; margin-left: auto; margin-right: auto;" />
-                <figcaption style="text-align: center;">Instituto Superior Politécnico Córdoba.</figcaption>
-            </figure>
-          </div>
-        </aside>
+        <h1>Practico 1 - <small>Bootstrap</small></h1>
+        <h2 class="text-black">Formulario de Contacto</h2>
+    </div>
+<div class="row justify-content-lg-center center_div">
+<form action="contacto_enviado.html">
+  <div class="form-group">
+    <label for="id_tb_nombre">Nombre:</label> 
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-male"></i>
+        </div>
+      </div> 
+      <input id="id_tb_nombre" name="id_tb_nombre" placeholder="Ej: Juan Perez" type="text" aria-describedby="id_tb_nombreHelpBlock" required="required" class="form-control">
+    </div> 
+    <span id="id_tb_nombreHelpBlock" class="form-text text-muted">Ingrese Su Nombre y Apellido</span>
+  </div>
+  <div class="form-group">
+    <label for="id_tb_direccion">Direccion:</label> 
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-car"></i>
+        </div>
+      </div> 
+      <input id="id_tb_direccion" name="id_tb_direccion" placeholder="Ej: Evergreen Terrace 742" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="id_eb_email">Email:</label> 
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-envelope"></i>
+        </div>
+      </div> 
+      <input id="id_eb_email" name="id_eb_email" placeholder="Ej. support@ispc.com.ar" type="email" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="id_ta_comentarios">Comentarios</label> 
+    <textarea id="id_ta_comentarios" name="id_ta_comentarios" cols="40" rows="5" required="required" class="form-control"></textarea>
+  </div> 
+  <div class="form-group">
+    <button name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form>
+</div>
+</main>
         <footer style="text-align: center;">© 2020 ElcesaR. Todos los derechos reservados.</footer>
-      </main>
-    
 
-    <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="static/js/jquery-3.2.1.slim.min.js"></script>
 
     <script src="static/js/popper.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
-  
+    </body>
 
-</body></html>
+</html>
