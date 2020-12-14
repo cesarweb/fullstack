@@ -80,7 +80,7 @@
   </div>
   <div class="form-group">
     <label for="id_resp" id = "lbl_resp">Respuesta</label> 
-    <textarea id="id_resp" name="resp" cols="40" rows="5" class="form-control"></textarea>
+    <textarea id="id_resp" name="resp" cols="40" rows="3" class="form-control"></textarea>
   </div>
   <div id="id_success" class="alert alert-success" role="alert">
   Respuesta Correcta
@@ -121,7 +121,7 @@
             $("#lbl_pista").hide();
             $("#id_pista").hide();
             $("#id_adivinanza").val(getPregunta(adiv));
-            $("#id_intentos").val(4 - intentos);
+            $("#id_intentos").val(5 - intentos);
         }
         window.onload = cargaInicial;
         function checkRespuesta() {
@@ -134,14 +134,17 @@
           return false;
         }
         intentos +=1;
-        $("#id_success").hide();
-        $("#id_reload").hide();
-        $("#id_danger").show();
-        $("#id_intentos").val(4 - intentos);
-        $("#id_pista").val(getPista(adiv, intentos))
-        $("#lbl_pista").show();
-        $("#id_pista").show();
-        if (intentos >3) {
+          $("#id_success").hide();
+          $("#id_reload").hide();
+          $("#id_danger").show();
+          $("#id_intentos").val(5 - intentos);
+
+        if (intentos > 2 && intentos < 5) {
+          $("#id_pista").val(getPista(adiv, intentos))
+          $("#lbl_pista").show();
+          $("#id_pista").show(); 
+        }
+        if (intentos >4) {
           $("#id_resp").val(getRespuesta(adiv));
           $("#id_resp").show();
           $("#lbl_resp").show();

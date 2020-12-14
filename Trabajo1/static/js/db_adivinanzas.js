@@ -126,11 +126,9 @@ function getRespuesta(adivinanza) {
 function getPista(adivinanza, intento) {
 	var pista = "";
 	var res = getRespuesta(adivinanza);
-	if (intento == 1)
-		pista = '';
-	else if (intento == 2)
+	if (intento == 3)
 		pista = convertirA_(res);
-	else if (intento == 3)
+	else if (intento == 4)
 		pista = ultimaPista(convertirA_(res) , res);
 	return pista;
 }
