@@ -1,71 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <title>Practico 1 - Horarios</title>
 
-        <!--     Estilo Externo -->
-        <link href="style.css" rel="stylesheet" />
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DFS 2020">
+    <meta name="author" content="Montiel Cesar">
+    <link rel="icon" href="static/img/favicon.ico">
 
-        <!--     Estilo Interno -->
-        <style>
-            body {
-                background-color: powderblue;
-            }
-            h1 {
-                color: blue;
-            }
-            p {
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <hgroup>
-                <h1>Practico 1</h1>
-                <h2>Desarrollador Full Stack 2020</h2>
-            </hgroup>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Horarios</a></li>
-            </ul>
-        </nav>
-        <section>
-            <h3>Horarios Desarrollador Full Stack 2020</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Grupo</th>
-                        <th>Sala</th>
-                        <th>Lunes</th>
-                        <th>Martes</th>
-                        <th>Miércoles</th>
-                        <th>Jueves</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1 y 2 (Entre Ríos)</td>
-                        <td>A</td>
-                        <td>De 19:00 hs. a 21:30 Hs.</td>
-                        <td></td>
-                        <td>De 19:00 hs. a 21:30 Hs.</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3 (Catamarca)</td>
-                        <td>B</td>
-                        <td></td>
-                        <td>De 19:00 hs. a 21:30 Hs.</td>
-                        <td>21:30 Hs.</td>
-                        <td>De 19:00 hs. a 21:30 Hs.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <title>Practico 1 - Bootstrap </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">DFS 2020</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDFSPractico1" aria-controls="navbarDFSPractico1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarDFSPractico1">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="horarios.html">Horarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Encuesta</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="https://www.ispc.edu.ar/">Portal ISPC</a> <a class="dropdown-item" href="https://www.portal.catamarca.gob.ar/">Portal Catamarca</a> 
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="container">
+      <div class="texto-principal">
+        <h1>Practico 1 - <small>Bootstrap</small></h1>
+        <h2 class="text-black">Desarrollador Full Stack 2020</h2>
+    </div>
+    <div class="texto-principal">
+        <h2><small>Horarios Desarrollador Full Stack 2020</small></h2>
+<div>
+<table class="table table-bordered table-responsive-sm table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Grupo</th>
+      <th scope="col">Sala</th>
+      <th scope="col">Lunes</th>
+      <th scope="col">Martes</th>
+      <th scope="col">Miércoles</th>
+      <th scope="col">Jueves</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1 y 2 (Entre Ríos)</th>
+      <td>A</td>
+      <td>De 19:00 hs. a 21:30 Hs.</td>
+      <td></td>
+      <td>@De 19:00 hs. a 21:30 Hs. </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3 (Catamarca)</th>
+      <td>B</td>
+      <td></td>
+      <td>De 19:00 hs. a 21:30 Hs</td>
+      <td></td>
+      <td>De 19:00 hs. a 21:30 Hs</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
         <footer style="text-align: center;">© 2020 ElcesaR. Todos los derechos reservados.</footer>
+    </main>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
     </body>
 </html>
