@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DFS 2020">
+    <meta name="author" content="Montiel Cesar">
+    <link rel="icon" href="static/img/favicon.ico">
+
+    <title>Practico 1 - Javascript </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <script src="static/js/db_adivinanzas.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">DFS 2020</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDFSPractico1" aria-controls="navbarDFSPractico1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarDFSPractico1">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="horarios.html">Horarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="adivinanzas.html">Adivinazas</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="https://www.ispc.edu.ar/">Portal ISPC</a> <a class="dropdown-item" href="https://www.portal.catamarca.gob.ar/">Portal Catamarca</a> 
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="container">
+
+      
+<div class="row justify-content-lg-center center_div">
+<form onsubmit="return checkRespuesta(this);">
+    <div class="form-group">
+    <label for="id_intentos">Intentos Restantes</label> 
+    <textarea id="id_intentos" name="id_intentos" cols="40" rows="1" class="form-control"></textarea>
+  </div> 
+  <div class="form-group">
+    <label for="id_adivinanza">Adivinaza</label> 
+    <textarea id="id_adivinanza" name="id_adivinanza" cols="40" rows="5" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="id_pista" id = "lbl_pista">Pista</label> 
+    <textarea id="id_pista" name="id_pista" cols="40" rows="1" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="id_respuesta">Respuesta</label> 
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-pencil-square-o"></i>
+        </div>
+      </div> 
+      <input id="id_respuesta" name="id_respuesta" placeholder="Respuesta" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="id_resp" id = "lbl_resp">Respuesta</label> 
+    <textarea id="id_resp" name="resp" cols="40" rows="3" class="form-control"></textarea>
+  </div>
+  <div id="id_success" class="alert alert-success" role="alert">
+  Respuesta Correcta
+</div>
+<div id="id_danger" class="alert alert-danger" role="alert">
+  Intenta de Nuevo!
+</div>
+  <div class="form-group">
+    <button id="id_bttn_responder" name="submit" type="submit" class="btn btn-primary">Responder</button>
+    <a id="id_reload" onclick="location.reload();" class="btn btn-danger">Recargar</a>
+  </div>
+  
+</form>
+
+</div>
+        <footer style="text-align: center;">© 2020 ElcesaR. Todos los derechos reservados.</footer>
+      </main>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        var adiv = genAdivinanza();
+        var intentos = 1;
+
+        function cargaInicial() {
+            $("#id_success").hide();
+            $("#id_reload").hide();
+            $("#id_danger").hide();
+            $("#lbl_resp").hide();
+            $("#id_resp").hide();
+            $("#lbl_pista").hide();
+            $("#id_pista").hide();
+            $("#id_adivinanza").val(getPregunta(adiv));
+            $("#id_intentos").val(5 - intentos);
+        }
+        window.onload = cargaInicial;
+        function checkRespuesta() {
+        var resp = (getRespuesta(adiv));
+        if (resp == $("#id_respuesta").val()){
+            $("#id_success").show();
+            $("#id_reload").show();
+            $("#id_danger").hide();
+            $("#id_bttn_responder").hide();
+          return false;
+        }
+        intentos +=1;
+          $("#id_success").hide();
+          $("#id_reload").hide();
+          $("#id_danger").show();
+          $("#id_intentos").val(5 - intentos);
+
+        if (intentos > 2 && intentos < 5) {
+          $("#id_pista").val(getPista(adiv, intentos))
+          $("#lbl_pista").show();
+          $("#id_pista").show(); 
+        }
+        if (intentos >4) {
+          $("#id_resp").val(getRespuesta(adiv));
+          $("#id_resp").show();
+          $("#lbl_resp").show();
+          $("#id_reload").show();
+          $("#id_bttn_responder").hide();
+          $("#id_danger").text("Has Perdido!");
+        }
+        return false;
+        }
+        </script>
+
+</body></html>
